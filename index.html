@@ -66,9 +66,10 @@
 $(function(){ 
   $(document).on('click','.js-fortune-start',function(){
     for(let i in fortuneResults){
+      let target = '.'+ i;
       let random = Math.floor( Math.random()*3);
-      $('.stars').text(fortuneResults[i][random]['stars']);
-      $('.detail').text(fortuneResults[i][random]['detail']);
+      $(target).find('.stars').text(fortuneResults[i][random]['stars']);
+      $(target).find('.detail').text(fortuneResults[i][random]['detail']);
     }
     $('.result').fadeIn(1000);
 
